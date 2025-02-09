@@ -17,8 +17,8 @@ async function getSeoTip(id: string) {
   return data
 }
 
-export default async function TipPage({ params }: { params: { newsID: string } }) {
-  const tip = await getSeoTip(params.newsID)
+export default async function TipPage({ searchParams }: { searchParams: { id: string } }) {
+  const tip = await getSeoTip(searchParams.id)
 
   if (!tip) {
     return (
@@ -28,7 +28,7 @@ export default async function TipPage({ params }: { params: { newsID: string } }
     )
   }
 
-  const shareUrl = `https://yourdomain.com/tips/${params.newsID}`
+  const shareUrl = `https://yourdomain.com/tips/${searchParams.id}`
 
   return (
     <div className="min-h-screen bg-[#1d1d1d] text-white font-sans">

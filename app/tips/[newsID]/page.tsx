@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { supabase } from "@/lib/supabase"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,8 +18,29 @@ async function getSeoTip(id: string) {
   return data
 }
 
-export default async function TipPage({ searchParams }: { searchParams: { id: string } }) {
-  const tip = await getSeoTip(searchParams.id)
+export async function generateMetadata({ params }: { params: Promise<{ newsID: string }> }): Promise<Metadata> {
+  const resolvedParams = await params
+  const tip = await getSeoTip(resolvedParams.newsID)
+
+  if (!tip) {
+    return {
+      title: "Tip not found",
+    }
+  }
+
+  return {
+    title: tip.title,
+    description: tip.content.substring(0, 160),
+  }
+}
+
+export default async function TipPage({
+  params,
+}: {
+  params: Promise<{ newsID: string }>
+}) {
+  const resolvedParams = await params
+  const tip = await getSeoTip(resolvedParams.newsID)
 
   if (!tip) {
     return (
@@ -28,7 +50,7 @@ export default async function TipPage({ searchParams }: { searchParams: { id: st
     )
   }
 
-  const shareUrl = `https://yourdomain.com/tips/${searchParams.id}`
+  const shareUrl = `https://yourdomain.com/tips/${resolvedParams.newsID}`
 
   return (
     <div className="min-h-screen bg-[#1d1d1d] text-white font-sans">

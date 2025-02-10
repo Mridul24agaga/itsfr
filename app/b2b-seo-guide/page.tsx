@@ -285,7 +285,7 @@ export default function B2BSEOCourse() {
     <div className="min-h-screen bg-[#1d1d1d] text-gray-200 font-sans">
       <div className="flex">
         {/* Desktop Sidebar */}
-        <Sidebar sections={sections} currentSection={currentSection} onSectionChange={handleSectionChange} />
+        <Sidebar/>
 
         {/* Main Content */}
         <div className="flex-1 md:ml-[60px]">
@@ -300,7 +300,6 @@ export default function B2BSEOCourse() {
                   </SheetTrigger>
                   <SheetContent side="left" className="w-64 p-0">
                     <div className="h-full bg-[#0a0a0a]">
-                      <Sidebar sections={sections} currentSection={currentSection} onSectionChange={handleSectionChange} />
                     </div>
                   </SheetContent>
                 </Sheet>

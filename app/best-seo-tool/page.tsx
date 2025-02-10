@@ -240,7 +240,7 @@ export default function SEOToolsBlogPost() {
   return (
     <div className={`min-h-screen bg-[#1d1d1d] text-gray-300 ${inter.className}`}>
       <div className="flex flex-col md:flex-row">
-        <Sidebar sections={sections} currentSection={currentSection} onSectionChange={setCurrentSection} />
+        <Sidebar />
         <div className="flex-1 w-full">
           <ScrollArea className="h-screen">
             <div className="max-w-4xl mx-auto px-4 py-6 md:py-12 space-y-8 md:space-y-16">

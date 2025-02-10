@@ -32,6 +32,7 @@
     "@tiptap/starter-kit": "^2.11.5",
     "@types/canvas-confetti": "^1.9.0",
     "@uploadthing/react": "^7.1.5",
+    "@vercel/analytics": "^1.4.1",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.0.4",

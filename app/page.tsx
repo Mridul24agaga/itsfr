@@ -12,6 +12,7 @@ import { Sparkles, ArrowRight } from "lucide-react"
 import { Separator } from "@/components/ui/seperator"
 import { toast } from "@/components/ui/use-toast"
 import type React from "react" // Added import for React
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -253,6 +254,7 @@ export default function Home() {
           </footer>
         </div>
       </main>
+      <Analytics/>
     </div>
   )
 }

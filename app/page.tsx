@@ -246,7 +246,7 @@ export default function Home() {
 
           {/* Footer */}
           <footer className="px-4 md:px-6 py-8 md:py-12 text-center text-white/60">
-            <p>&copy; 2023 SEO Tools & Resources. All rights reserved.</p>
+            <p>&copy; 2025 SEO Tools & Resources. All rights reserved.</p>
           </footer>
         </div>
       </main>
